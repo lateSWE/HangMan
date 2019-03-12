@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static java.lang.Character.toUpperCase;
@@ -9,22 +10,30 @@ public class main {
         char letter = 'C';
         Scanner input = new Scanner(System.in);
         System.out.print("Name of file: ");
-        String filename = input.toString();
+        String filename = input.nextLine();
 
         System.out.println(TimeLetterInWord(WordList[0], letter));
-        System.out.println(ReadFile(filename));
+        System.out.println();
+
+        for (int i = 0; i < ; i++) {
+
+        }
     }
 
 
-    private static String ReadFile(String FileName) {
-        String out = "";
+    private static ArrayList<String> ReadFile(String FileName) {
+        ArrayList<String> out = new ArrayList<>();
 
         File file = new File(FileName);
-        Scanner FileInput = new Scanner((file+".txt"));
+        Scanner FileInput = null;
+        try {
+            FileInput = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         while (FileInput.hasNextLine()) {
-            String NewOut = FileInput.nextLine();
-            out = out + NewOut;
+            out.add(FileInput.nextLine());
         }
         return out;
     }
