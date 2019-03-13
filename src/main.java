@@ -35,19 +35,22 @@ public class main {
                 break;
         }
 
-
+        //Randomizing the word  |
+        //                      V
         System.out.println("\n\n");
-        /*for (int i = 0; i < ReadFile(filename).size(); i++) {
-            if (ReadFile(filename).get(i).indexOf('#')!=0 && ReadFile(filename).get(i).indexOf('#')!=1) {
-                System.out.println("["+(i+1)+"] - " + ReadFile(filename).get(i));
-            }
-        }*/
         int ChoisePC = (int) RandomWord(ReadFile(filename).size());
         for (int i = 0; i < ReadFile(filename).get(ChoisePC).length(); i++) {
             System.out.print(" _");
         }
         System.out.println();
         System.out.println(ReadFile(filename).get(ChoisePC));
+
+        //Guessing part  |
+        //               V
+        String GuessUser = input.nextLine();
+        for (int i = 0; i < ReadFile(filename).get(ChoisePC).length(); i++) {
+            if ()
+        }
     }
     private  static double RandomWord(int i){
         double j = (double) i;
