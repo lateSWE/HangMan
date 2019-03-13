@@ -1,6 +1,3 @@
-import com.sun.source.tree.CaseTree;
-import com.sun.source.tree.SwitchTree;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,39 +10,52 @@ public class main {
         Scanner input = new Scanner(System.in);
 
 
-        System.out.println("[1] - Most common words");
-        System.out.println("[2] - Only nouns");
-        System.out.println("[3] - Own text file( must end with \".txt\"");
-        System.out.print("What mode?: ");
-        String choise = input.nextLine();
-        switch (choise){
-            case("1"):
+        System.out.println(
+                "[1] - Most common words (Slow loading time)\n" +
+                "[2] - Only nouns\n" +
+                "[3] - Own text file(must end with \".txt\"!");
+        int ChoiceOne = input.nextInt();
+        switch (ChoiceOne){
+            case(1):
                 filename = "wiki-100k.txt";
+                System.out.println("Loading words and choosing one...");
                 break;
 
-            case("2"):
+            case(2):
                 filename = "nouns.txt";
+                System.out.println("Loading words and choosing one...");
                 break;
 
-            case ("3"):
+            case (3):
                 filename = input.nextLine();
-                break;;
+                System.out.println("Loading words and choosing one");
+                break;
+            default:
+                System.out.println("Error!!!! try again\n");
+                break;
+        }
+
+
+        System.out.println("\n\n");
+        /*for (int i = 0; i < ReadFile(filename).size(); i++) {
+            if (ReadFile(filename).get(i).indexOf('#')!=0 && ReadFile(filename).get(i).indexOf('#')!=1) {
+                System.out.println("["+(i+1)+"] - " + ReadFile(filename).get(i));
+            }
+        }*/
+        int ChoisePC = (int) RandomWord(ReadFile(filename).size());
+        for (int i = 0; i < ReadFile(filename).get(ChoisePC).length(); i++) {
+            System.out.print(" _");
         }
         System.out.println();
-        System.out.println("________________________________\n" +
-                "|\t\t\t\t\t\t|");
-        for (int i = 0; i < ReadFile(filename).size()-1; i++) {
-            if (ReadFile(filename).get(i).indexOf('#')!=0 && ReadFile(filename).get(i).indexOf('#')!=1) {
-                System.out.print("|  ");
-                System.out.print(ReadFile(filename).get(i));
-                System.out.println("\t  |");
-            }
-        }
-        System.out.println("________________________________");
+        System.out.println(ReadFile(filename).get(ChoisePC));
+    }
+    private  static double RandomWord(int i){
+        double j = (double) i;
+        double out = (Math.random() * j);
+        return out;
     }
 
-
-    public static ArrayList<String> ReadFile(String FileName) {
+    private static ArrayList<String> ReadFile(String FileName) {
         ArrayList<String> out = new ArrayList<>();
         ArrayList<String> size_out = new ArrayList<>();
         File file = new File(FileName);
