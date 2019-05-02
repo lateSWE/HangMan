@@ -1,46 +1,84 @@
-import hangman.HangmanConsoleWindow;
-
-import java.io.File;
+import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+import hangman.HangmanConsoleWindow;
 
-    HangmanConsoleWindow hcw = new HangmanConsoleWindow();
-    public ArrayList Wordlist = new ArrayList();
+public class main {
+    public static ArrayList<String> Wordlist = new ArrayList<String>();
 
     public static void main(String [] args){
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
+        HangmanConsoleWindow hcw = new HangmanConsoleWindow();
+        hcw.changeTextColor(Color.green);
+
+        ReadFileContent("wiki-100k.txt");
+
 
         while (true){
-
-
-            System.out.print("Play again? [Y]es [N]o");
-            if (YorNBoolean(input)){
+            hcw.print("Play again? [Y]es [N]o:");
+            if (YorNBoolean(hcw.nextString())){
+                //game
+            }else{
+                hcw.exit();
                 break;
             }
         }
     }
 
+
+
+
     private static boolean YorNBoolean (String input) {
-        boolean out = false;
-        while (true) {
-            if (input.length() == 1) {
+        switch (input.length()){
+            case (1):
                 if (input.toUpperCase().equals("Y")) {
                     return true;
                 } else if (input.toUpperCase().equals("N")) {
                     return false;
                 } else {
-                    System.out.print("Error in \"YorNBoolean\" ID:1");
+                    System.out.println("Error in \"YorNBoolean\" ID:1");
+                    return false;
                 }
-            } else {
-                System.out.print("Error in \"YorNBoolean\" ID:2");
-            }
+
+            default:
+                System.out.println("Error in \"YorNBoolean\" ID:2");
+                return false;
         }
     }
 
-    public static void LoadWords (String FileName){
-        
+    private static void ReadFileContent(String FileName){
+        Scanner in = null;
+        try {
+            in = new Scanner(new FileReader(FileName));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        int i=0;
+        assert in != null;
+        while(in.hasNext()){
+            i++;
+            if (i<10){
+                System.out.print("Line: " + i + "     ");
+            }else if (i<100){
+                System.out.print("Line: " + i + "    ");
+            }else  if (i<1000){
+                System.out.print("Line: " + i + "   ");
+            }else if (i<10000){
+                System.out.print("Line: " + i + "  ");
+            }else if (i<100000){
+                System.out.print("Line: " + i + " ");
+            }
+
+            if (!(in.next().charAt(0) =='#')) {
+                Wordlist.add(in.next());
+                System.out.println("Word found");
+            } else {
+                System.out.println("Comment found");
+            }
+        }
+        in.close();
     }
 }
