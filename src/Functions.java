@@ -6,20 +6,18 @@ public class Functions {
     public static ArrayList<String> Wordlist = new ArrayList<String>();
 
     public static boolean YorNBoolean (String input) {
-        switch (input.length()){
-            case (1):
-                if (input.toUpperCase().equals("Y")) {
-                    return true;
-                } else if (input.toUpperCase().equals("N")) {
-                    return false;
-                } else {
-                    System.out.println("Error in \"YorNBoolean\" ID:1");
-                    return false;
-                }
-
-            default:
-                System.out.println("Error in \"YorNBoolean\" ID:2");
+        if(input.length()==1) {
+            if (input.toUpperCase().equals("Y")) {
+                return true;
+            } else if (input.toUpperCase().equals("N")) {
                 return false;
+            } else {
+                System.out.println("Error in \"YorNBoolean\" ID:1");
+                return false;
+            }
+        }else {
+            System.out.println("Error in \"YorNBoolean\" ID:2");
+            return false;
         }
     }
 

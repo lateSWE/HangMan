@@ -8,14 +8,14 @@ public class main {
     public static void main(String [] args){
         hcw.changeTextColor(Color.green);
 
-        Functions.ReadFileContent("wiki-100k.txt");
+        ChoseWordList();
 
         boolean first = true;
         while (true){
             int tries = 0;
             if (!first){
                 PrintLogo();
-                hcw.print("You tried: " + tries + " times");
+                hcw.println("You tried: " + tries + " times");
                 hcw.println("Play again? [Y]es [N]o:");
                 if (Functions.YorNBoolean(hcw.nextString())){
                     hcw.clear();
@@ -29,6 +29,39 @@ public class main {
         }
     }
 
+    private  static void ChoseWordList (){
+        char input;
+        String wordlist;
+
+        PrintLogo();
+        hcw.println("Chose a word list:");
+        hcw.println("[1]  Top 100k words in shakespeare's novels");
+        hcw.println("[2]  Top 1k used nouns in the English language");
+        hcw.println("[3]  Your own word list(Advanced)");
+
+        input = hcw.nextChar();
+        switch (input){
+            case(1):
+                wordlist = "wiki-100k.txt";
+                break;
+
+            case(2):
+                wordlist = "nouns.txt";
+                break;
+
+            case(3):
+                wordlist = hcw.nextString();
+                break;
+
+            default:
+                wordlist = "nouns.txt";
+
+        }
+        if (wordlist.contains(".txt")){
+            Functions.ReadFileContent(wordlist);
+        }
+        hcw.clear();
+    }
 
     private static int game (String word){
         ShownWord.clear();
