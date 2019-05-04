@@ -1,9 +1,10 @@
 import java.awt.*;
-
-import hangman.HangmanConsoleWindow;
+import java.util.ArrayList;
 
 public class main {
     private static HangmanConsoleWindow hcw = new HangmanConsoleWindow();
+    private static ArrayList ShownWord = new ArrayList();
+
     public static void main(String [] args){
         hcw.changeTextColor(Color.green);
 
@@ -11,29 +12,45 @@ public class main {
 
         boolean first = true;
         while (true){
+            int tries = 0;
             if (!first){
-                hcw.print("Play again? [Y]es [N]o:");
+                PrintLogo();
+                hcw.print("You tried: " + tries + " times");
+                hcw.println("Play again? [Y]es [N]o:");
                 if (Functions.YorNBoolean(hcw.nextString())){
-                    game(Functions.RandomWord(Functions.Wordlist));
+                    hcw.clear();
+                    tries = game(Functions.RandomWord(Functions.Wordlist));
                 }else {
                     hcw.exit();
                     break;
                 }
             }
             first = false;
-
-            game(Functions.RandomWord(Functions.Wordlist));
         }
     }
-    private static void game (String word){
-        while(true){
+
+
+    private static int game (String word){
+        ShownWord.clear();
+        int tries = 0;
+        boolean GuessedRight = false;
+
+        for (int i = 0; i < word.length(); i++) {
+            ShownWord.add("-");
+        }
+        while(!GuessedRight){
+            hcw.clear();
             PrintLogo();
-            hcw.println();
-            break;
-        }
 
+            hcw.println();
+            GuessedRight = true;
+        }
+        return tries;
     }
 
+    private static void ReplaceArrayList(){
+
+    }
     private static void PrintLogo (){
         hcw.print(""+
                 " _                                             \n" +
