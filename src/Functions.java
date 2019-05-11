@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Functions {
-    public static ArrayList<String> Wordlist = new ArrayList<String>();
+    public static ArrayList<java.lang.String> WordList = new ArrayList<String>();
 
     public static boolean YorNBoolean (String input) {
         if(input.length()==1) {
@@ -40,11 +40,11 @@ public class Functions {
                     System.out.print("Line: " + i + " ");
                 }
 
-                Wordlist.add(line);
-                System.out.print(Wordlist.get(i) + "  ");
+                WordList.add(line);
+                System.out.print(WordList.get(i) + "  ");
 
                 if (line.charAt(0) != '#') {
-                    Wordlist.add(line);
+                    WordList.add(line);
                     System.out.println("Word found: " + line);
                 } else {
                     System.out.println("Comment found: " + line);
@@ -59,9 +59,7 @@ public class Functions {
     }
 
     public static String RandomWord(ArrayList list){
-        int random = (int) Math.random() * list.size();
-        String word = (String) list.get(random);
-        return word;
+        int random = (int) (Math.random() * list.size());
+        return list.get(random).toString();
     }
-
 }
