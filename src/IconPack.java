@@ -1,5 +1,6 @@
 public class IconPack {
     public static void PrintLogo (){
+        main.hcw.clear();
         main.hcw.print(""+
                 " _                                             \n" +
                 "| |                                            \n" +
@@ -10,6 +11,7 @@ public class IconPack {
                 "                    __/ |                      \n" +
                 "                   |___/                       \n" +
                 "");
+        System.out.println("HangMan logo printed");
     }
 
     public static void PrintMan (int stage, int difficulty){
@@ -28,6 +30,7 @@ public class IconPack {
                                 "|              \n" +
                                 "|              \n" +
                                 "|              \n");
+                        System.out.println("First stage of hangman");
                         break;
 
                     case (2):
@@ -41,6 +44,7 @@ public class IconPack {
                                 "|_________     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Second stage of hangman");
                         break;
 
                     case (3):
@@ -54,6 +58,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Third stage of hangman");
                         break;
 
                     case (4):
@@ -67,6 +72,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Forth stage of hangman");
                         break;
 
                     case (5):
@@ -80,6 +86,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Fifth stage of hangman");
                         break;
 
                     case (6):
@@ -93,6 +100,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Sixth stage of hangman");
                         break;
 
                     case (7):
@@ -106,6 +114,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Seventh stage of hangman");
                         break;
                 }
 
@@ -122,6 +131,7 @@ public class IconPack {
                                 "|              \n" +
                                 "|              \n" +
                                 "|              \n");
+                        System.out.println("First stage of hangman");
                         break;
 
                     case (2):
@@ -135,6 +145,7 @@ public class IconPack {
                                 "|_________     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Second stage of hangman");
                         break;
 
                     case (3):
@@ -148,6 +159,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Third stage of hangman");
                         break;
 
                     case (4):
@@ -156,14 +168,15 @@ public class IconPack {
                                 "|  | /  |      \n" +
                                 "|  |/   O      \n" +
                                 "|  |   /|\\    \n" +
-                                "|  |    |      \n" +
-                                "|  |   / \\    \n" +
+                                "|  |    |       \n" +
+                                "|  |   / \\     \n" +
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Forth stage of hangman");
                         break;
 
-                    case (7):
+                    case (5):
                         main.hcw.print("" +
                                 "|   ____       \n" +
                                 "|  | /  |      \n" +

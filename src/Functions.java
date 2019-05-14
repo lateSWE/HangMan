@@ -5,22 +5,10 @@ import java.util.ArrayList;
 public class Functions {
     public static ArrayList<java.lang.String> WordList = new ArrayList<String>();
 
-    public static boolean YorNBoolean (String input) {
-        if(input.length()==1) {
-            if (input.toUpperCase().equals("Y")) {
-                return true;
-            } else if (input.toUpperCase().equals("N")) {
-                return false;
-            } else {
-                System.out.println("Error in \"YorNBoolean\" ID:1");
-                return false;
-            }
-        }else {
-            System.out.println("Error in \"YorNBoolean\" ID:2");
-            return false;
-        }
-    }
-
+    /**
+     * FileName is the file name to load the words from
+     * @param FileName
+     */
     public static void ReadFileContent(String FileName){
         try {
             BufferedReader br = new BufferedReader(new FileReader(FileName));
@@ -40,8 +28,6 @@ public class Functions {
                     System.out.print("Line: " + i + " ");
                 }
 
-                WordList.add(line);
-                System.out.print(WordList.get(i) + "  ");
 
                 if (line.charAt(0) != '#') {
                     WordList.add(line);

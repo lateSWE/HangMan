@@ -1,9 +1,9 @@
 import java.awt.*;
+import java.lang.invoke.SwitchPoint;
 import java.util.ArrayList;
 
 public class main {
     public static HangmanConsoleWindow hcw = new HangmanConsoleWindow();
-    private static ArrayList<String> ShownWord = new ArrayList();
     private static String Word;
     private static int difficulty;
 
@@ -26,13 +26,13 @@ public class main {
 
                 if (hcw.nextChar() == 'y'){
                     hcw.clear();
-                    tries = Game(Functions.RandomWord(Functions.WordList));
+                    tries = Game(Functions.RandomWord(Functions.WordList), difficulty);
                 }else {
                     hcw.exit();
                     break;
                 }
             }else {
-                tries = Game(Functions.RandomWord(Functions.WordList));
+                tries = Game(Functions.RandomWord(Functions.WordList), difficulty);
             }
 
 
@@ -42,28 +42,13 @@ public class main {
 
 
 
-    private static int Game(String WordLocal){
-        int tries = 0;
-        char guess;
-        GameWord(WordLocal);
-
-        while (true){
-
-            hcw.clear();
-            IconPack.PrintLogo();
+    private static int Game(String WordLocal, int DifficultyLocal){
+        int tries=0;
+        String GuessedWord = "";
 
 
-            hcw.println(ShownWord.toString());
-            hcw.println("Guess a letter!");
-            guess = hcw.nextChar();
-
-
-            ChangeShownWord(guess);
-
-
-            if (WordLocal.equals(ShownWord)){
-                return tries;
-            }
+        if (WordLocal.contains(GuessedWord)){
+            return tries;
         }
     }
 
@@ -93,6 +78,10 @@ public class main {
         }
     }
 
+
+    /**
+     * Asks the user what file he wants to use
+     */
     private static void ChoseWordList (){
         char input;
         String wordlist;
@@ -114,6 +103,7 @@ public class main {
                 break;
 
             case('3'):
+                hcw.println();
                 wordlist = hcw.nextString();
                 break;
 
@@ -124,18 +114,5 @@ public class main {
             Functions.ReadFileContent(wordlist);
         }
         hcw.clear();
-    }
-
-
-    private static void GameWord (String word){
-        ShownWord.clear();
-        for (int i = 0; i < word.length(); i++) {
-            ShownWord.add(" -");
-        }
-    }
-
-    private static void ChangeShownWord (char input){
-        if (!ShownWord.isEmpty()) ShownWord.clear();
-
     }
 }
