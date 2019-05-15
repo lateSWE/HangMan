@@ -7,7 +7,7 @@ public class Functions {
 
     /**
      * FileName is the file name to load the words from
-     * @param FileName
+     * @param FileName Filename to read words from (must be ".txt")
      */
     public static void ReadFileContent(String FileName){
         try {

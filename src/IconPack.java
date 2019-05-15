@@ -1,6 +1,8 @@
 public class IconPack {
     public static void PrintLogo (){
+        System.out.println();
         main.hcw.clear();
+        System.out.println("HangMan console cleared");
         main.hcw.print(""+
                 " _                                             \n" +
                 "| |                                            \n" +
@@ -14,7 +16,8 @@ public class IconPack {
         System.out.println("HangMan logo printed");
     }
 
-    public static void PrintMan (int stage, int difficulty){
+    public static void PrintMan (int difficulty, int stage){
+        System.out.println();
         switch (difficulty) {
 
             case(1):
@@ -30,7 +33,7 @@ public class IconPack {
                                 "|              \n" +
                                 "|              \n" +
                                 "|              \n");
-                        System.out.println("First stage of hangman");
+                        System.out.println("First stage of Hang Man Figure");
                         break;
 
                     case (2):
@@ -44,7 +47,7 @@ public class IconPack {
                                 "|_________     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Second stage of hangman");
+                        System.out.println("Second stage of Hang Man Figure");
                         break;
 
                     case (3):
@@ -58,7 +61,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Third stage of hangman");
+                        System.out.println("Third stage of Hang Man Figure");
                         break;
 
                     case (4):
@@ -72,7 +75,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Forth stage of hangman");
+                        System.out.println("Forth stage of Hang Man Figure");
                         break;
 
                     case (5):
@@ -86,7 +89,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Fifth stage of hangman");
+                        System.out.println("Fifth stage of Hang Man Figure");
                         break;
 
                     case (6):
@@ -100,7 +103,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Sixth stage of hangman");
+                        System.out.println("Sixth stage of Hang Man Figure");
                         break;
 
                     case (7):
@@ -114,9 +117,10 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Seventh stage of hangman");
+                        System.out.println("Seventh stage of Hang Man Figure");
                         break;
                 }
+                break;
 
             case (2):
                 switch (stage) {
@@ -131,7 +135,7 @@ public class IconPack {
                                 "|              \n" +
                                 "|              \n" +
                                 "|              \n");
-                        System.out.println("First stage of hangman");
+                        System.out.println("First stage of Hang Man Figure");
                         break;
 
                     case (2):
@@ -145,7 +149,7 @@ public class IconPack {
                                 "|_________     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Second stage of hangman");
+                        System.out.println("Second stage of Hang Man Figure");
                         break;
 
                     case (3):
@@ -159,7 +163,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Third stage of hangman");
+                        System.out.println("Third stage of Hang Man Figure");
                         break;
 
                     case (4):
@@ -173,36 +177,10 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
-                        System.out.println("Forth stage of hangman");
+                        System.out.println("Forth stage of Hang Man Figure");
                         break;
-
-                    case (5):
-                        main.hcw.print("" +
-                                "|   ____       \n" +
-                                "|  | /  |      \n" +
-                                "|  |/          \n" +
-                                "|  |          \n" +
-                                "|  |           \n" +
-                                "|  |          \n" +
-                                "|__|______     \n" +
-                                "||      |___   \n" +
-                                "||_________|   \n");
-                        break;
-
-                    case (8):
-                        main.hcw.print("" +
-                                "|   ____       \n" +
-                                "|  | /  |      \n" +
-                                "|  |/   O      \n" +
-                                "|  |   /|\\    \n" +
-                                "|  |    |      \n" +
-                                "|  |   / \\    \n" +
-                                "|__|______     \n" +
-                                "||      |___   \n" +
-                                "||_________|   \n");
-                        break;
-
                 }
+                break;
 
             case (3):
                 switch (stage){
@@ -246,6 +224,7 @@ public class IconPack {
                         break;
 
                 }
+                break;
 
         }
     }

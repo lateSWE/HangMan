@@ -13,7 +13,7 @@ import javax.swing.*;
 public class HangmanConsoleWindow {
 
     private static final int WINDOW_WIDTH = 800;
-    private static final int WINDOW_HEIGHT = 500;
+    private static final int WINDOW_HEIGHT = 600;
     private static final Color BACKGROUND_COLOR = Color.BLACK;
     private static final Color TEXT_COLOR = Color.GREEN;
     private static final String FONT = "Courier New";
