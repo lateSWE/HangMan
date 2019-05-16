@@ -1,4 +1,8 @@
 public class IconPack {
+
+    /**
+     * Prints the hangman logo to the hang man console
+     */
     public static void PrintLogo (){
         System.out.println();
         main.hcw.clear();
@@ -16,6 +20,15 @@ public class IconPack {
         System.out.println("HangMan logo printed");
     }
 
+    /**
+     * Contains the ascii art to be able to be printed to the HangMan console
+     *
+     * @param difficulty
+     * It is the amount of different ascii art to be able to be printed
+     *
+     * @param stage
+     * It is the amount of the man that has been hung
+     */
     public static void PrintMan (int difficulty, int stage){
         System.out.println();
         switch (difficulty) {
@@ -195,6 +208,7 @@ public class IconPack {
                                 "|              \n" +
                                 "|              \n" +
                                 "|              \n");
+                        System.out.println("First stage of Hang Man Figure");
                         break;
 
                     case (2):
@@ -208,6 +222,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Second stage of Hang Man Figure");
                         break;
 
                     case (3):
@@ -221,6 +236,7 @@ public class IconPack {
                                 "|__|______     \n" +
                                 "||      |___   \n" +
                                 "||_________|   \n");
+                        System.out.println("Third stage of Hang Man Figure");
                         break;
 
                 }

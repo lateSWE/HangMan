@@ -14,8 +14,8 @@ public class HangmanConsoleWindow {
 
     private static final int WINDOW_WIDTH = 800;
     private static final int WINDOW_HEIGHT = 600;
-    private static final Color BACKGROUND_COLOR = Color.BLACK;
-    private static final Color TEXT_COLOR = Color.GREEN;
+    private static Color BACKGROUND_COLOR = Color.BLACK;
+    private static Color TEXT_COLOR = Color.GREEN;
     private static final String FONT = "Courier New";
     private static final int FONT_SIZE = 20;
     private static final String TITLE = "Hangman Console Window";
@@ -128,9 +128,8 @@ public class HangmanConsoleWindow {
      * @param color
      *            f�rgen att �ndra till.
      */
-    public void changeTextColor(Color color) {
-        textarea.setForeground(color);
-    }
+    public void changeTextColor(Color color) {textarea.setForeground(color);}
+    public void changeBackgroundColor(Color color) {textarea.setBackground(color);}
 
     private char getUserInput() {
         String text = textarea.getText();
